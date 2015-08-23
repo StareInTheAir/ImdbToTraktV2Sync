@@ -1,6 +1,10 @@
-imdb_to_trakt_v2_sync_token.json
-client_secret_holder.py
-.idea/
+/.idea/
+/*.iml
+
+/imdb_to_trakt_v2_sync_token.json
+/client_secret_holder.py
+/compile-client_secret_holder
+
 *.pyc
-*.iml
-!client_secret_holder.pyc
+!/client_secret_holder.pyc
+!/client_secret_holder_python27.pyc
