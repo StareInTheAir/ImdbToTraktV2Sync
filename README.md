@@ -6,7 +6,7 @@ A nifty python script, that takes your IMDB watchlist and transfers it to your t
 - Detects which movies you already entered manually into trakt and skips them, so that you don't get duplicate entries
 - Correctly sets the trakt property 'watched\_at' based on the date you marked the movie watched on IMDB
 - Uses new trakt v2 API with OAuth2
-- Runs with python 2.7 and 3.x
+- Runs with python 3 (tested with 3.4) and 2.7 (with small modification)
 
 ## Instructions
 You need to download your IMDB watchlist as CSV, because IMDB removed the http retrieve feature. Head over to
@@ -22,14 +22,16 @@ You also need to grant this script permission to your trakt account: http://trak
 PIN which needs to be passed via the ```--oauth-pin``` option. This is a one time step. The script will redeem the PIN to get
 a token and use the token from now on.
 
+If you don't have Python 3 installed, grab it (on OS X with [brew](http://brew.sh): ```brew install python3```)
+
 To execute the script, you will need to install the libraries I used:
-```pip install docopt requests pytz```
+```pip3 install docopt requests pytz```
 
 Now you're ready to run the script:
-```python imdb_to_trakt_v2_sync.py --watchlist ~/Downloads/WATCHLIST.csv --oauth-pin <your pin>```
+```imdb_to_trakt_v2_sync.py --watchlist ~/Downloads/WATCHLIST.csv --oauth-pin <your pin>```
 
 Or for future times just:
-```python imdb_to_trakt_v2_sync.py --watchlist ~/Downloads/WATCHLIST.csv```
+```imdb_to_trakt_v2_sync.py --watchlist ~/Downloads/WATCHLIST.csv```
 
 ## Usage
     imdb_to_trakt_v2_sync.py --watchlist <watchlist-csv-file> [--timezone <timezone>] [--oauth-pin <oauth-pin>]
@@ -48,6 +50,10 @@ Or for future times just:
     -h --help                           Show this message.
     -v --version                        Show version.
     --print-timezones                   Prints all available pytz timezones, that can be chosen for --timezone argument
+
+## Run with python 2.7
+Rename ```client_secret_holder_python27.pyc``` to ```client_secret_holder.pyc``` and call the script with
+```python2.7 imdb_to_trakt_v2_sync.py …```.
 
 ## delete\_complete\_trakt\_movie\_history.py
 I wrote this script for debugging purposes. It deletes all the movies in your trakt history. You will need to get a token

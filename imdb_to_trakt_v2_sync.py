@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 
 """
 ImdbToTraktV2Sync - Syncs trakt with IMDB watchlist
