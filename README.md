@@ -16,13 +16,13 @@ downloaded file via the ```--watchlist```  option to the script.
 IMDB doesn't specify a timezone along their dates in the CSV. I don't know how it was in the past,
 but right now it looks like IMDB always uses pacific time, regardless where you actually come from.
 If that's different for you, you can pass a pytz timezone via the ```--timezone``` option, 
-otherwise ```America_Los_Angeles``` is the default.
+otherwise ```America/Los_Angeles``` is the default.
 
 You also need to grant this script permission to your trakt account: http://trakt.tv/pin/5851. You will get a
 PIN which needs to be passed via the ```--oauth-pin``` option. This is a one time step. The script will redeem the PIN to get
 a token and use the token from now on.
 
-If you don't have Python 3 installed, grab it (on OS X with [brew](http://brew.sh): ```brew install python3```)
+If you don't have Python 3 installed, grab it (on OS X with [brew](http://brew.sh): ```brew install python3```).
 
 To execute the script, you will need to install the libraries I used:
 ```pip3 install docopt requests pytz```

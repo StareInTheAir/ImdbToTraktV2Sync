@@ -53,7 +53,7 @@ def convert_imdb_date_string_to_datetime(imdb_date_string):
 
 
 def sync_imdb_to_trakt():
-    arguments = docopt.docopt(__doc__, version='1.0')
+    arguments = docopt.docopt(__doc__, version='1.0.1')
 
     if arguments['--print-timezones']:
         for timezone in pytz.all_timezones:
